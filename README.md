@@ -17,3 +17,6 @@ Open the application by 'ms_gui_mouseAtlas'
   * a txt file linking the numbers with the names of regions
   * the Allen atlas average template
   * an annotation file in paxinos space (suffix '_inPax')
+  
+ ## Citation
+ When you use this software, please cite: not published yet.
