@@ -5,7 +5,7 @@ You need Matlab (tested on v. 2016) and SPM12.
 
 ## Installation
 Copy the files to a location of your choice.
-Make sure that you included the SPM12 path.
+Make sure that you included your SPM12 path in Matlab.
 Open the application by 'ms_gui_mouseAtlas'
 
 ## Creating an atlas
