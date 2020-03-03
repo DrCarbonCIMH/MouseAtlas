@@ -72,7 +72,8 @@ if ~isdeployed
         errordlg('Please, first add your SPM 12 path and start the application again','No SPM found');
     end
     if isempty(which('ms_allen2pax_batch'))
-        addpath([d filesep '20171030_Allen2Pax']);
+%         addpath([d filesep '20171030_Allen2Pax']);
+        addpath([d filesep 'transJobs']);
     end
 end
 
@@ -462,16 +463,8 @@ if ~isnumeric(PathName)
     end
     V(1)=spm_write_vol(Vout,Mtx); % this is the new atlas
     
-%     ppt_allen2pax(V(1).fname, 0); % transform into paxinos space
     spm_jobman('initcfg');
-%     ms_allen2pax_batch;
-%     matlabbatch{1}.spm.util.reorient.srcfiles={V(1).fname};
-%     matlabbatch{2, 1}.spm.spatial.normalise.write.subj.def = {[fileparts(which('ms_allen2pax_batch')) filesep 'y_shift2pax.nii']};
-%     matlabbatch{2, 1}.spm.spatial.normalise.write.subj.resample(1) = {[PathName 'ax' FileName]};
-%     spm_jobman( 'run', matlabbatch );
-%     delete([PathName matlabbatch{1}.spm.util.reorient.prefix FileName]) % cleanup
-%     movefile([PathName 'w' matlabbatch{1}.spm.util.reorient.prefix FileName], [PathName strrep(FileName, '.nii', '_inPax.nii')]) 
-    % transform to paxinos space
+    % transform to Dorr in Pax space
     matlabbatch = ms_allen2pax_batch(V(1).fname);
     spm_jobman( 'run', matlabbatch );
     delete([PathName matlabbatch{1}.spm.util.reorient.prefix FileName]) % cleanup

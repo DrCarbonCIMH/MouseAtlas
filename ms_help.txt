@@ -4,27 +4,12 @@ and
 http://download.alleninstitute.org/informatics-archive/current-release/mouse_ccf/average_template/
 
 From these websites you can download all the .nrrd files.
-To read the files use the function in the "nrrdread" folder.
-To create .nii files you have to use the functions from the "NIfTI_20140122" folder, because SPM seems not to be able to insert the number of the annotation matrix as integers.
-For more info and the actual cration of the .nii files, see "ms_create_NII.m"
-At this step we should have the annotation and average matrix as nii-files.
-
-Get the link between the annotation number and the actual brain region by reading the json file.
-See the "ms_create_regions.m"; we use "JSON.parse(urlread('http://api.brain-map.org/api/v2/structure_graph_download/1.json'));" to parse the json file and save it as "regions.mat"
-!Warning! 
-the json file does not seem to be the absolut correct one. It is used for the interactive web version of the atlas but seems to have way too many regions!
-the json file at http://api.brain-map.org/api/v2/structure_graph_download/1.json provides more regions than the actual annotation.nrrd files!!
-but the missing regions are corresponding to the provided http://download.alleninstitute.org/informatics-archive/current-release/mouse_ccf/annotation/ccf_2015/structure_centers.csv !
-There are the same numbers missing!!
-AND: the annotation matrix shows no holes!! It seems simply not to be fine enough!
-For more see: ms_checkAtlas.m
 
 ms_gui_mouseAtlas:
 It just needs the annotation nii-file and the regions.mat. Both are loaded in the "opening function". Change the corresponding lines to your need!
 Its main purpose is to create ROI masks. Just select from the node tree the needed ROI(s) and click "Update". It can take some time till all the needed info are loaded!
 You will see the visualization of the selected ROI(s). BUT: this is just a visual feedback! The matlab function isosurface is used which is not really a good function to visualize small structures, but the best we have.
 If everything seems to be correct the ROI mask can be created by "create Atlas". A .nii annotation file is created (name: atlas_DATE.nii) and a corresponding txt file which contains the linkage between number and ROI name.
-
 
 
 You can get more info about Allen Atlas: 
