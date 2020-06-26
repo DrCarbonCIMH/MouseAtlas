@@ -17,6 +17,9 @@ Open the application by 'ms_gui_mouseAtlas'
   * a txt file linking the numbers with the names of regions
   * the Allen atlas average template
   * an annotation file in paxinos space (suffix '_inPax')
-  
+ ## Manual
+ A manual can be found in the doc folder.
+ ## Example
+ You can find an usage example in the example folder. This example extracts ROI time courses from a 4D nifty file and calculates a correlation matrix. The used atlas was created with this application. Make sure to unzip 'data.zip' before usage!
  ## Citation
  When you use this software, please cite: not published yet.
