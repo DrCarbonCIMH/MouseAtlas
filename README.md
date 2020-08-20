@@ -22,4 +22,5 @@ Open the application by 'ms_gui_mouseAtlas'
  ## Example
  You can find an usage example in the example folder. This example extracts ROI time courses from a 4D nifty file and calculates a correlation matrix. The used atlas was created with this application. Make sure to unzip 'data.zip' before usage!
  ## Citation
- When you use this software, please cite: not published yet.
+ When you use this software, please cite: 
+ "Sack M, Zheng L, Gass N, Ende G, Sartorius A, Weber-Fahr W (2020) Interactive tool to create adjustable anatomical atlases for mouse brain imaging. MAGMA doi:10.1007/s10334-020-00866-0."
